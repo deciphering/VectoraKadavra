@@ -1,14 +1,21 @@
-# VectoraKadavra 🪄
+# VectoraKadavra
 
-Programmatically convert SVG graphics inside Microsoft PowerPoint presentations (`.pptx`) to native editable PowerPoint shapes, with full support for **Slide Masters**, **Custom Layouts**, and standard slides.
+**VectoraKadavra** is a powerful Python CLI utility that programmatically converts embedded SVG graphics in Microsoft PowerPoint into native, editable PowerPoint vector shapes (`msoFreeform`).
+
+Unlike PowerPoint's built-in "Convert to Shape" button which discards crops, loses inherited group transformations, and resets orientation, VectoraKadavra ensures 100% pixel-perfect preservation of your original design. 
 
 ## Features
 
-- **Pixel-Perfect Position & Alignment**: Measures bounding box centers and compensates for PowerPoint's clipboard paste offsets to ensure 0-drift positioning.
-- **Orientation & Flip Preservation**: Restores lost horizontal/vertical flips and rotation angles discarded by PowerPoint's `SVGEdit`.
-- **Slide Master & Layout Targeting**: Iterates through all presentation designs, master slides, and layout templates to convert embedded SVG graphics.
+- **True Headless Background Execution**: Uses advanced Windows API techniques (ToolWindow styling + off-screen positioning) to run PowerPoint silently in the background without stealing focus or appearing in your Taskbar / Alt-Tab menu.
+- **Deep Group Unpacking**: Recursively scans and unpacks deeply nested groups to ensure no embedded SVGs are skipped.
+- **Transformation Inheritance**: Automatically ensures SVGs inherit absolute scaling, rotation, and positioning from their parent groups before conversion.
+- **Flawless Crop Preservation**: Uses a clever "Duplicate & Uncrop" engine to extract the exact unscaled physical dimensions of heavily cropped or distorted images, preventing squishing or aspect ratio loss.
+- **Safe Vector Culling**: Re-aligns bounding boxes to orthogonal axes (0 rotation) to cleanly cull out-of-bounds paths without using destructive boolean geometry (`ShapesIntersect`), perfectly preserving your original strokes and colors.
+- **Pixel-Perfect Position & Alignment**: Eliminates clipboard offsets and perfectly restores the original exact bounding box coordinates.
+- **Orientation & Flip Preservation**: Restores lost horizontal/vertical flips and rotation angles discarded by PowerPoint's native `SVGEdit` engine.
+- **Slide Master & Layout Targeting**: Iterates through all presentation designs, master slides, and layout templates, in addition to standard slides.
 - **Optional Auto-Ungrouping**: Can automatically ungroup converted shapes into individual editable vector paths.
-- **Safe Execution**: Includes automatic backup creation (`.bak`) and detailed tabular reporting of all converted objects.
+- **Safe Execution**: Includes automatic backup creation (`.bak`) and prints a beautiful `Rich` tabular summary of all converted objects.
 
 ---
 
