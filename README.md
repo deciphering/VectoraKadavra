@@ -4,8 +4,9 @@ Programmatically convert SVG graphics inside Microsoft PowerPoint presentations 
 
 ## Features
 
+- **Pixel-Perfect Position & Alignment**: Measures bounding box centers and compensates for PowerPoint's clipboard paste offsets to ensure 0-drift positioning.
+- **Orientation & Flip Preservation**: Restores lost horizontal/vertical flips and rotation angles discarded by PowerPoint's `SVGEdit`.
 - **Slide Master & Layout Targeting**: Iterates through all presentation designs, master slides, and layout templates to convert embedded SVG graphics.
-- **Native Shape Fidelity**: Leverages PowerPoint's native COM engine (`SVGEdit`) to ensure 100% fidelity with the built-in "Convert to Shape" command.
 - **Optional Auto-Ungrouping**: Can automatically ungroup converted shapes into individual editable vector paths.
 - **Safe Execution**: Includes automatic backup creation (`.bak`) and detailed tabular reporting of all converted objects.
 

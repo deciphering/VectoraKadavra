@@ -13,4 +13,9 @@ __pycache__/
 *.bak
 ~$*
 output/
+test_*.py
 test_*.pptx
+test_*.svg
+inspect_*.py
+output_*.pptx
+input.pptx
