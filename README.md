@@ -21,16 +21,9 @@ Unlike PowerPoint's built-in "Convert to Shape" button which discards crops, los
 
 ## Setup
 
-The Python virtual environment is configured in `.venv/`.
-
-To activate the environment:
+Install the required dependencies using pip:
 ```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-Or run directly using the venv's Python executable:
-```powershell
-.\.venv\Scripts\python.exe convert_svg.py <input.pptx>
+pip install -r requirements.txt
 ```
 
 ---
@@ -39,22 +32,22 @@ Or run directly using the venv's Python executable:
 
 ### 1. Convert all SVGs in a presentation (Masters, Layouts, and Slides)
 ```powershell
-.\.venv\Scripts\python.exe convert_svg.py presentation.pptx
+python convert_svg.py presentation.pptx
 ```
 
 ### 2. Convert only SVGs on Slide Masters and Custom Layouts
 ```powershell
-.\.venv\Scripts\python.exe convert_svg.py presentation.pptx --target masters
+python convert_svg.py presentation.pptx --target masters
 ```
 
 ### 3. Convert and automatically ungroup into individual paths
 ```powershell
-.\.venv\Scripts\python.exe convert_svg.py presentation.pptx --ungroup
+python convert_svg.py presentation.pptx --ungroup
 ```
 
 ### 4. Save to a separate output file with backup
 ```powershell
-.\.venv\Scripts\python.exe convert_svg.py input.pptx -o output_converted.pptx --backup
+python convert_svg.py input.pptx -o output_converted.pptx --backup
 ```
 
 ---
