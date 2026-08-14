@@ -1,5 +1,7 @@
 # VectoraKadavra
 
+![Vectora Kadavra!](assets/vk_logo.jpg)
+
 **VectoraKadavra** is a powerful Python CLI utility that programmatically converts embedded SVG graphics in Microsoft PowerPoint into native, editable PowerPoint vector shapes (`msoFreeform`).
 
 Unlike PowerPoint's built-in "Convert to Shape" button which discards crops, loses inherited group transformations, and resets orientation, VectoraKadavra ensures 100% pixel-perfect preservation of your original design. 
