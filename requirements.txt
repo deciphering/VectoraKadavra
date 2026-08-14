@@ -1,4 +1,0 @@
-pywin32>=306
-python-pptx>=1.0.0
-lxml>=5.0.0
-rich>=13.0.0
